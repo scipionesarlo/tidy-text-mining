@@ -150,7 +150,7 @@ bing_and_nrc <- bind_rows(pride_prejudice %>%
                             inner_join(get_sentiments("bing")) %>%
                             mutate(method = "Bing et al."),
                           pride_prejudice %>% 
-                            inner_join(get_sentiments("nrc") %>% 
+                            inner_join(get_sentiments("nrc")) %>% 
                                          filter(sentiment %in% c("positive", 
                                                                  "negative"))) %>%
                             mutate(method = "NRC")) %>%
